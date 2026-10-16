@@ -6,27 +6,21 @@ import 'package:flutter/widgets.dart';
 import 'niger_alphabets.dart';
 import 'niger_country.dart';
 
-/// The article's "Other Formats": state transport, military and the two
-/// diplomatic plates. **No image of any of them was found**, so nothing here
-/// is measured off them. Digit height, frame and the 520×110 canvas are the
-/// private plate's, and every cell is one 54-unit pitch (the artwork's own is
-/// 53.9) so the digits look like the measured plates'. Where each element
-/// sits, and every colour (see `NigerThemes`), is a reading of the article's
-/// prose.
+/// Layout of the plates with no artwork (state transport, military, the two
+/// diplomatic): nothing is measured, positions and colours read from the
+/// article's prose. Digit height, frame and canvas are the private plate's.
 ///
-/// Each plate is one row of cells, centred on the canvas: a digit slot, a
-/// fixed word, or a gap, each some number of pitches wide.
+/// Each plate is one row of cells: a digit slot, a fixed word, or a gap, each
+/// some number of 54-unit pitches wide.
 abstract final class _Layout {
   static const double width = 520;
   static const double height = 110;
   static const double pitch = 54;
 
-  /// Fixed letters are set a little smaller than the digits so a three-letter
-  /// word fits its three cells.
+  /// Smaller than the digits so a three-letter word fits its three cells.
   static const double wordGlyph = 84;
 
-  /// The military flag at the left, in the artwork-less guess: 7:6, and a
-  /// little under the plate's inner height.
+  /// The military flag at the left, 7:6.
   static const PlateBox flag = PlateBox(18, 22.5, 70, 60);
 }
 
@@ -43,8 +37,7 @@ class _Cell {
   final double span;
 }
 
-/// What differs between the four: the country, where the row starts, and its
-/// cells. `left` is null to centre the row on the canvas.
+/// `left` is null to centre the row on the canvas.
 class _Format {
   const _Format({
     required this.id,
