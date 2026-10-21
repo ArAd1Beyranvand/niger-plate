@@ -1,12 +1,11 @@
-import 'package:plate_core/plate_core.dart';
 import 'package:flutter/widgets.dart';
+import 'package:plate_core/plate_core.dart';
 
 import 'niger_colors.dart';
 import 'niger_usage.dart';
 
-/// Frame ~3.1 mm (0.028 of height) and outer corner ~6.5 mm (0.06), measured
-/// off the artwork at 520×110. The artwork's 1.6 mm field margin outside the
-/// frame is not drawn.
+/// Frame and corner ratios are measured off the artwork at 520×110; its field
+/// margin outside the frame is not drawn.
 abstract final class NigerThemes {
   static PlateTheme _livery({
     required Color field,

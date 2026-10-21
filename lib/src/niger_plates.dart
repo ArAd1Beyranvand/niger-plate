@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:plate_core/plate_core.dart';
 import 'package:flutter/widgets.dart';
+import 'package:plate_core/plate_core.dart';
 
 import 'niger_alphabets.dart';
 import 'niger_colors.dart';

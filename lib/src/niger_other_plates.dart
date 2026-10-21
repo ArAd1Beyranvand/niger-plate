@@ -1,17 +1,14 @@
 import 'dart:math';
 
-import 'package:plate_core/plate_core.dart';
 import 'package:flutter/widgets.dart';
+import 'package:plate_core/plate_core.dart';
 
 import 'niger_alphabets.dart';
 import 'niger_country.dart';
 
-/// Layout of the plates with no artwork (state transport, military, the two
-/// diplomatic): nothing is measured, positions and colours read from the
-/// article's prose. Digit height, frame and canvas are the private plate's.
-///
-/// Each plate is one row of cells: a digit slot, a fixed word, or a gap, each
-/// some number of 54-unit pitches wide.
+/// Plates with no artwork: positions are read from the article's prose, with
+/// the private plate's digit height, frame and canvas. Each plate is one row
+/// of cells (digit, fixed word or gap), each some number of pitches wide.
 abstract final class _Layout {
   static const double width = 520;
   static const double height = 110;
@@ -20,7 +17,6 @@ abstract final class _Layout {
   /// Smaller than the digits so a three-letter word fits its three cells.
   static const double wordGlyph = 84;
 
-  /// The military flag at the left, 7:6.
   static const PlateBox flag = PlateBox(18, 22.5, 70, 60);
 }
 

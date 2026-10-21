@@ -3,10 +3,9 @@ import 'package:plate_core/plate_core.dart';
 
 import 'niger_colors.dart';
 
-/// Niger as two `PlateCountry`s, differing only in the map the panel paints:
-/// the private plate's is a black silhouette, the commercial plate's is
-/// filled with the national flag. The panel box is the map's own box, so no
-/// panel colour shows around it; each aspect ratio is that box's.
+/// The panel is the map's own box, so no panel colour shows around it and each
+/// aspect ratio is that box's. The private map is a black silhouette, the
+/// commercial one is filled with the flag.
 abstract final class NigerCountry {
   static const PlateDrawing _flag = PlateDrawing(700, 600, <PlateShape>[
     PlateRectShape(0, 0, 700, 600, Color(0xFF0DB02B)),
@@ -36,7 +35,6 @@ abstract final class NigerCountry {
     ),
   );
 
-  /// For the plates that print no map: the panel is switched off by the spec.
   static const PlateCountry plain = PlateCountry(
     code: 'ne',
     captionLines: <String>[],
@@ -44,7 +42,6 @@ abstract final class NigerCountry {
     panelTextColor: NigerColors.black,
   );
 
-  /// The military plate prints the flag itself at the left.
   static const PlateCountry military = PlateCountry(
     code: 'ne',
     captionLines: <String>[],

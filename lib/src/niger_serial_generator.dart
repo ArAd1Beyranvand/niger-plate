@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:plate_core/plate_core.dart';
 
-/// Generates plausible values for fixtures and demos. Pure Dart.
 abstract final class NigerSerialGenerator {
   static List<String?> generate(PlateSpec spec, {Random? random}) {
     final Random rnd = random ?? Random();
