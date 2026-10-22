@@ -109,8 +109,7 @@ abstract final class NigerOtherPlates {
   );
 
   static PlateSpec _build(_Format format) {
-    final double left =
-        format.left ?? (_Layout.width - format.span * _Layout.pitch) / 2;
+    final double left = format.left ?? (_Layout.width - format.span * _Layout.pitch) / 2;
     final slots = <PlateSlot>[];
     final labels = <PlateLabel>[];
     final groups = <String, List<int>>{};
@@ -134,12 +133,7 @@ abstract final class NigerOtherPlates {
     }
 
     for (final _Cell cell in format.cells) {
-      final PlateBox box = PlateBox(
-        x,
-        0,
-        cell.span * _Layout.pitch,
-        _Layout.height,
-      );
+      final PlateBox box = PlateBox(x, 0, cell.span * _Layout.pitch, _Layout.height);
       switch (cell.kind) {
         case _Kind.digit:
           if (run != cell.group) {
@@ -151,13 +145,7 @@ abstract final class NigerOtherPlates {
           runCount++;
         case _Kind.word:
           flush();
-          labels.add(
-            PlateLabel(
-              text: cell.text,
-              box: box,
-              glyphHeight: _Layout.wordGlyph,
-            ),
-          );
+          labels.add(PlateLabel(text: cell.text, box: box, glyphHeight: _Layout.wordGlyph));
         case _Kind.gap:
           flush();
       }
@@ -169,10 +157,7 @@ abstract final class NigerOtherPlates {
       country: format.country,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.height,
-      panel: PlatePanel(
-        box: format.panel ?? const PlateBox(0, 0, 1, 1),
-        padding: EdgeInsets.zero,
-      ),
+      panel: PlatePanel(box: format.panel ?? const PlateBox(0, 0, 1, 1), padding: EdgeInsets.zero),
       noPanel: format.panel == null,
       labels: labels,
       slots: slots,

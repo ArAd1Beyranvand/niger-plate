@@ -29,10 +29,7 @@ abstract final class NigerCountry {
     panelColor: NigerColors.commercialOrange,
     panelTextColor: NigerColors.black,
     flagAspectRatio: 52.0 / 39.7,
-    flag: SvgPlateAsset(
-      'assets/maps/niger_map_flag.svg',
-      package: 'niger_plate',
-    ),
+    flag: SvgPlateAsset('assets/maps/niger_map_flag.svg', package: 'niger_plate'),
   );
 
   static const PlateCountry plain = PlateCountry(
