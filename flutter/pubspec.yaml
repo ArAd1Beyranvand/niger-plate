@@ -1,7 +1,7 @@
 name: niger_plate
 description: "Niger's licence plates for plate_core: the 2005 series in private and commercial liveries, with themes, alphabets and advisory validators."
 version: 0.1.0
-repository: https://github.com/ArAd1Beyranvand/niger-plate
+repository: https://github.com/ArAd1Beyranvand/niger-plate/tree/main/flutter
 resolution: workspace
 
 environment:
